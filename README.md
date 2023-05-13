@@ -21,3 +21,9 @@ Execute the following command in the `project` directory to start the applicatio
 ```sh
 python manage.py runserver
 ```
+
+Execute the following command in the `project` directory to apply all migrations.
+
+```sh
+python manage.py migrate
+```
