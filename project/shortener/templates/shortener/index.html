@@ -1,10 +1,14 @@
-<h1>URL Shortener</h1>
+{% extends "base.html" %}
+
+{% block body %}
+<h1>{% block title %}URL Shortener{% endblock %}</h1>
 <form action="/shortener/" method="post">
     {% csrf_token %}
     {{ form }}
-    <button type="submit">Submit!</button>
+    {% include "components/submit_button.html" with title="Submit!" only %}
 </form>
 {% if id %}
 <label>ShortURL:</label>
 <a href="http://127.0.0.1:8000/shortener/{{id}}" target="_blank">http://127.0.0.1:8000/shortener/{{id}}</a>
 {% endif %}
+{% endblock %}

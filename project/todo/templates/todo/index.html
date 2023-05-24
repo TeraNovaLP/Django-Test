@@ -1,14 +1,18 @@
-<h1>ToDo</h1>
+{% extends "base.html" %}
+
+{% block body %}
+<h1>{% block title %}ToDo{% endblock %}</h1>
 <form action="/todo/new" method="post">
     {% csrf_token %}
     {{ new_form }}
-    <button type="submit">Submit!</button>
+    {% include "components/submit_button.html" with title="Submit!" only %}
 </form>
 
 {% for form in item_forms  %}
 <form action="/todo/{{form.id}}/update" method="post">
     {% csrf_token %}
     {{ form.form }}
-    <button type="submit">Update!</button>
+    {% include "components/submit_button.html" with title="Update!" only %}
 </form>
 {% endfor %}
+{% endblock %}
