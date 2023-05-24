@@ -27,3 +27,7 @@ Execute the following command in the `project` directory to apply all migrations
 ```sh
 python manage.py migrate
 ```
+
+## Helpful projects
+
+-   [ruff](https://github.com/charliermarsh/ruff)
